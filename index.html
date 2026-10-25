@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f7f4">
+  <title>Daymark — Tasks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Daymark home"><span class="brand-mark">d</span><span>daymark</span></a>
+      <div class="topbar-note"><span class="live-dot"></span> Your space, in focus</div>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <div class="eyebrow"><span class="eyebrow-line"></span> YOUR PERSONAL BOARD</div>
+      <h1 id="page-title">Make room for<br><span>what matters.</span></h1>
+      <p class="subtitle">A little clarity goes a long way. Keep your next steps in sight.</p>
+    </section>
+
+    <form class="add-task" id="task-form">
+      <span class="input-plus" aria-hidden="true">+</span>
+      <label class="sr-only" for="task-title">Add a task</label>
+      <input id="task-title" name="title" maxlength="120" placeholder="Add a task to your list..." autocomplete="off" required>
+      <button type="submit">Add task <span aria-hidden="true">↗</span></button>
+    </form>
+
+    <section class="board" aria-label="Task board">
+      <div class="column" data-status="todo">
+        <div class="column-head"><div class="column-title"><span class="status-dot todo-dot"></span><h2>To do</h2><span class="count" id="count-todo">0</span></div><span class="column-caption">UP NEXT</span></div>
+        <div class="task-list" id="list-todo" aria-live="polite"></div>
+        <div class="empty-state" id="empty-todo"><span>✳</span><p>Nothing on the list.<br>Enjoy the breathing room.</p></div>
+      </div>
+      <div class="column" data-status="in-progress">
+        <div class="column-head"><div class="column-title"><span class="status-dot progress-dot"></span><h2>In progress</h2><span class="count" id="count-in-progress">0</span></div><span class="column-caption">IN MOTION</span></div>
+        <div class="task-list" id="list-in-progress" aria-live="polite"></div>
+        <div class="empty-state" id="empty-in-progress"><span>◌</span><p>Nothing in motion yet.<br>Move a task here to begin.</p></div>
+      </div>
+      <div class="column" data-status="done">
+        <div class="column-head"><div class="column-title"><span class="status-dot done-dot"></span><h2>Done</h2><span class="count" id="count-done">0</span></div><span class="column-caption">ALL WRAPPED UP</span></div>
+        <div class="task-list" id="list-done" aria-live="polite"></div>
+        <div class="empty-state" id="empty-done"><span>✓</span><p>Your wins will show up here.<br>One step at a time.</p></div>
+      </div>
+    </section>
+    <footer class="footer"><span>Small steps. Steady progress.</span><span class="footer-sparkle">✳</span></footer>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
